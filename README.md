@@ -55,6 +55,6 @@ area_which_experiences_drag = (PI / 4) * pow(5.4, 2);
 
 /*the bit that follows is to caolculate the fuel usage rate. It will have to be called every time they change the sype of engine they use or number of rocket boosters they use. might be simpler to just call it at the start of the calculations function but just before the while loop opens*/
 float calc_fuel_rate(float fuel_rate, float centaur_engine_type, float number_of_boosters) {
-      fuel_rate = (centaur_engine_type / (450.5 * 9.81)) + ((number_of_boosters * 1688400) / (279.3 * 9.81)); /*450.5 = ISP of common centaur, 9.81 = gravity at Earth surface, 279.3 = ISP of solid rocket boosters*/
+      fuel_rate = (centaur_engine_type / (450.5 * 9.81)) + ((number_of_boosters * 1688400) / (279.3 * 9.81)) + ((3827000 / (311.9 * 9.81)); /*450.5 = ISP of common centaur, 9.81 = gravity at Earth surface, 279.3 = ISP of solid rocket boosters, 3827000 = thrust from atlas boosters, 311.9 = ISP of Atlas booster*/
       return fuel_rate;
       }
