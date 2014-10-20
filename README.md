@@ -45,3 +45,16 @@ float thrust_calc(thrust centaur_engine_type i) {
       }
 
 /*for temperature, i have googled rocket launches from the uk. on of the sites i a place called south uist. I have found the average temperature there to be about 7 degrees C so we could use this as our default case and then on the start menu when it says what the programme is we could just say "this programme is designed to simulate an Atlas V launching from Soutch Uist" or something like that*/
+
+
+/*Below added Monday 20th computing sergery*/
+#define PI 3.141592654
+
+drag coefficient = 0.42; /*this is in the previous code but the answer was made up*/
+area_which_experiences_drag = (PI / 4) * pow(5.4, 2);
+
+/*the bit that follows is to caolculate the fuel usage rate. It will have to be called every time they change the sype of engine they use or number of rocket boosters they use. might be simpler to just call it at the start of the calculations function but just before the while loop opens*/
+float calc_fuel_rate(float fuel_rate, float centaur_engine_type, float number_of_boosters) {
+      fuel_rate = (centaur_engine_type / (450.5 * 9.81)) + ((number_of_boosters * 1688400) / (279.3 * 9.81)); /*450.5 = ISP of common centaur, 9.81 = gravity at Earth surface, 279.3 = ISP of solid rocket boosters*/
+      return fuel_rate;
+      }
